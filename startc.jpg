@@ -2,8 +2,8 @@
 MsgBox "1", 64, "Status Update"
 --trunk1close--
 --trunk2open--
-MsgBox "2", 64, "Status Update"
+Error 2
 --trunk2close--
 --trunk3open--
-MsgBox "3", 64, "Status Update"
+Error 3
 --trunk3close--
