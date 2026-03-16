@@ -1,9 +1,9 @@
 --trunk1open--
-1
+MsgBox "1", 64, "Status Update"
 --trunk1close--
 --trunk2open--
-2
+MsgBox "2", 64, "Status Update"
 --trunk2close--
 --trunk3open--
-3
+MsgBox "3", 64, "Status Update"
 --trunk3close--
